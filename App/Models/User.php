@@ -33,4 +33,21 @@ class User {
             throw new \Exception("No users found!");
         }
     }
+
+    public static function insert($data) {
+        $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
+        $sql  = 'INSERT INTO ' . self::$table . ' (email, password, name) VALUES (?, ?, ?)';
+        $stmt = $conn->prepare($sql);
+        
+        $stmt->bindValue(1, $data['email']);
+        $stmt->bindValue(2, $data['password']);
+        $stmt->bindValue(3, $data['name']);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return "User successfully inserted.";
+        } else {
+            throw new \Exception("Failed to insert user!");
+        }
+    }
 }
