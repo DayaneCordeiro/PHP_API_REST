@@ -13,7 +13,10 @@ if ($_GET['url']) {
         array_shift($url); // Delete first position of the array
         $service = 'App\Services\\' . ucfirst($url[0]) . 'Service';
         array_shift($url);
-        $method  = strtolower($_SERVER['REQUEST_METHOD']);
+        $method = $url[0];
+        array_shift($url);
+        
+        //$method  = strtolower($_SERVER['REQUEST_METHOD']);
 
         try {
             $response = call_user_func_array(array(new $service, $method), $url);

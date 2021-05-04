@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'bda7001931f095066e6409c6d48ec7477b537681',
+    'reference' => '938a5cc1cd4234d3bdff6323257071f613609083',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'bda7001931f095066e6409c6d48ec7477b537681',
+      'reference' => '938a5cc1cd4234d3bdff6323257071f613609083',
     ),
     'firebase/php-jwt' => 
     array (
