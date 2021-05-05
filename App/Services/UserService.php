@@ -13,8 +13,12 @@ class UserService {
         }
     }
 
-    public function post() {
+    public function create() {
         return User::insert($_POST);
+    }
+
+    public function login() {
+        return User::login($_POST);
     }
 
     public function update() {
