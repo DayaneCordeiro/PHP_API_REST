@@ -101,4 +101,26 @@ class User {
             throw new \Exception("Email not found!");
         }
     }
+
+    public static function update($data) {
+        // echo "<pre>";
+        // print_r($data->email);
+        // echo "</pre>";die();
+
+        $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
+        $sql  = 'UPDATE ' . self::$table . ' SET email = ?, password = ?, name = ? WHERE id = ?';
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(1, $data->email);
+        $stmt->bindValue(2, md5($data->password));
+        $stmt->bindValue(3, $data->name);
+        $stmt->bindValue(4, $data->id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return "User successfully updated.";
+        } else {
+            throw new \Exception("Failed to update user!");
+        }
+    }
 }

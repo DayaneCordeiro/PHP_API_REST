@@ -22,7 +22,8 @@ class UserService {
     }
 
     public function update() {
-        //
+        $_PUT = file_get_contents('php://input');
+        return User::update(json_decode($_PUT));
     }
 
     public function delete() {
