@@ -71,7 +71,7 @@ class User {
             if (md5($data['password']) == $password) {
                 $secret_key = "YOUR_SECRET_KEY";
                 $issuer_claim = "serie_login"; // this can be the servername
-                $audience_claim = "THE_AUDIENCE";
+                $audience_claim = "client";
                 $issuedat_claim = time(); // issued at
                 $notbefore_claim = $issuedat_claim + 10; //not before in seconds
                 //$expire_claim = $issuedat_claim + 60; // expire time in seconds
