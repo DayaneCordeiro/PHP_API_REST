@@ -40,9 +40,9 @@ class User {
         $sql  = 'INSERT INTO ' . self::$table . ' (email, password, name) VALUES (?, ?, ?)';
         $stmt = $conn->prepare($sql);
         
-        $stmt->bindValue(1, $data['email']);
-        $stmt->bindValue(2, md5($data['password']));
-        $stmt->bindValue(3, $data['name']);
+        $stmt->bindValue(1, $data->email);
+        $stmt->bindValue(2, md5($data->password));
+        $stmt->bindValue(3, $data->name);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -57,7 +57,7 @@ class User {
         $sql  = 'SELECT * FROM ' . self::$table . ' WHERE email = ?';
         $stmt = $conn->prepare($sql);
 
-        $stmt->bindValue(1,  $data['email']);
+        $stmt->bindValue(1,  $data->email);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -68,7 +68,7 @@ class User {
             $name     = $user['name'];
 
             // Validates the password
-            if (md5($data['password']) == $password) {
+            if (md5($data->password) == $password) {
                 $secret_key = "YOUR_SECRET_KEY";
                 $issuer_claim = "serie_login"; // this can be the servername
                 $audience_claim = "client";

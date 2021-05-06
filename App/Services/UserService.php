@@ -14,11 +14,13 @@ class UserService {
     }
 
     public function create() {
-        return User::insert($_POST);
+        $_POST = file_get_contents('php://input');
+        return User::insert(json_decode($_POST));
     }
 
     public function login() {
-        return User::login($_POST);
+        $_POST = file_get_contents('php://input');
+        return User::login(json_decode($_POST));
     }
 
     public function update() {
