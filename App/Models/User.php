@@ -103,10 +103,6 @@ class User {
     }
 
     public static function update($data) {
-        // echo "<pre>";
-        // print_r($data->email);
-        // echo "</pre>";die();
-
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'UPDATE ' . self::$table . ' SET email = ?, password = ?, name = ? WHERE id = ?';
         $stmt = $conn->prepare($sql);
@@ -121,6 +117,21 @@ class User {
             return "User successfully updated.";
         } else {
             throw new \Exception("Failed to update user!");
+        }
+    }
+
+    public static function delete($data) {
+        $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
+        $sql  = 'DELETE FROM ' . self::$table . ' WHERE id = ?';
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(1, $data->id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return "User successfully deleted.";
+        } else {
+            throw new \Exception("Failed to delete user!");
         }
     }
 }

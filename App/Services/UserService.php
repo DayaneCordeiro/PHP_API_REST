@@ -27,6 +27,7 @@ class UserService {
     }
 
     public function delete() {
-        //
+        $_DELETE = file_get_contents('php://input');
+        return User::delete(json_decode($_DELETE));
     }
 }
