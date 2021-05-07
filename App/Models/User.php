@@ -141,6 +141,12 @@ class User {
     }
 
     public static function update($data) {
+        if (is_null($data->id)) {
+            throw new \Exception("ID is required");
+        } else if (!$data->id == (int) $data->id) {
+            throw new \Exception("ID must be integer.");
+        }
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'UPDATE ' . self::$table . ' SET email = ?, password = ?, name = ? WHERE id = ?';
         $stmt = $conn->prepare($sql);
