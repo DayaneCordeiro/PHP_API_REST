@@ -165,6 +165,12 @@ class User {
     }
 
     public static function delete($data) {
+        if (is_null($data->id)) {
+            throw new \Exception("ID is required");
+        } else if (!$data->id == (int) $data->id) {
+            throw new \Exception("ID must be integer.");
+        }
+        
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'DELETE FROM ' . self::$table . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
