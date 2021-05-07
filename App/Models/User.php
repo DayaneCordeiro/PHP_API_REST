@@ -7,6 +7,10 @@ class User {
     private static $table = 'user';
 
     public static function findById($id) {
+        if (!$id == (int) $id) {
+            throw new \Exception("Error: ID must be integer.");
+        }
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'SELECT * FROM ' . self::$table . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
