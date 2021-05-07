@@ -40,6 +40,24 @@ class User {
     }
 
     public static function insert($data) {
+        if (is_null($data->email)) {
+            throw new \Exception("Email is required!");
+        } else {
+            $data->email = filter_var($data->email, FILTER_SANITIZE_EMAIL);
+
+            if (!filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
+                throw new \Exception("Invalid email!");
+            }
+        }
+
+        if (is_null($data->password)) {
+            throw new \Exception("Password is required!");
+        }
+
+        if (is_null($data->name)) {
+            throw new \Exception("Name is required!");
+        }
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'INSERT INTO ' . self::$table . ' (email, password, name) VALUES (?, ?, ?)';
         $stmt = $conn->prepare($sql);
