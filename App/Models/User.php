@@ -8,7 +8,7 @@ class User {
 
     public static function findById($id) {
         if (!$id == (int) $id) {
-            throw new \Exception("Error: ID must be integer.");
+            throw new \Exception("ID must be integer.");
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
@@ -170,7 +170,7 @@ class User {
         } else if (!$data->id == (int) $data->id) {
             throw new \Exception("ID must be integer.");
         }
-        
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'DELETE FROM ' . self::$table . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
