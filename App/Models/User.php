@@ -75,6 +75,20 @@ class User {
     }
 
     public static function login($data) {
+        if (is_null($data->email)) {
+            throw new \Exception("Email is required!");
+        } else {
+            $data->email = filter_var($data->email, FILTER_SANITIZE_EMAIL);
+
+            if (!filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
+                throw new \Exception("Invalid email!");
+            }
+        }
+
+        if (is_null($data->password)) {
+            throw new \Exception("Password is required!");
+        }
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'SELECT * FROM ' . self::$table . ' WHERE email = ?';
         $stmt = $conn->prepare($sql);
@@ -113,11 +127,13 @@ class User {
 
                 $jwt = JWT::encode($token, $secret_key);
                 return array(
-                        "message" => "Successful login.",
+                        "message" => "Successfully logged in.",
                         "jwt" => $jwt,
                         "email" => $email,
                         //"expireAt" => $expire_claim
                 );
+            } else {
+                throw new \Exception("Incorrect password!");
             }
         } else {
             throw new \Exception("Email not found!");
