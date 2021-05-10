@@ -25,6 +25,12 @@ class UserService {
     }
 
     public function login() {
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if ($method != "POST") {
+            return throw new \Exception("HTTP method must be 'POST'");
+        }
+
         $_POST = file_get_contents('php://input');
         return User::login(json_decode($_POST));
     }
