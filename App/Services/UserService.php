@@ -14,6 +14,12 @@ class UserService {
     }
 
     public function create() {
+        $method  = strtolower($_SERVER['REQUEST_METHOD']);
+
+        if ($method != "post") {
+            return throw new \Exception("HTTP method must be 'POST'");
+        }
+
         $_POST = file_get_contents('php://input');
         return User::insert(json_decode($_POST));
     }
