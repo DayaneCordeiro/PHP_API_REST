@@ -8,7 +8,7 @@ class User {
 
     public static function findById($id) {
         if (!$id == (int) $id) {
-            throw new \Exception("ID must be integer.");
+            return throw new \Exception("ID must be integer.");
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
@@ -21,7 +21,7 @@ class User {
         if ($stmt->rowCount() > 0) {
             return $stmt->fetch(\PDO::FETCH_ASSOC);
         } else {
-            throw new \Exception("No users found!");
+            return throw new \Exception("No users found!");
         }
     }
 
@@ -35,7 +35,7 @@ class User {
         if ($stmt->rowCount() > 0) {
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         } else {
-            throw new \Exception("No users found!");
+            return throw new \Exception("No users found!");
         }
     }
 
@@ -46,16 +46,16 @@ class User {
             $data->email = filter_var($data->email, FILTER_SANITIZE_EMAIL);
 
             if (!filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
-                throw new \Exception("Invalid email!");
+                return throw new \Exception("Invalid email!");
             }
         }
 
         if (is_null($data->password)) {
-            throw new \Exception("Password is required!");
+            return throw new \Exception("Password is required!");
         }
 
         if (is_null($data->name)) {
-            throw new \Exception("Name is required!");
+            return throw new \Exception("Name is required!");
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
@@ -70,7 +70,7 @@ class User {
         if ($stmt->rowCount() > 0) {
             return "User successfully inserted.";
         } else {
-            throw new \Exception("Failed to insert user!");
+            return throw new \Exception("Failed to insert user!");
         }
     }
 
@@ -142,33 +142,66 @@ class User {
 
     public static function update($data) {
         if (is_null($data->id)) {
-            throw new \Exception("ID is required");
+            return throw new \Exception("ID is required");
         } else if (!$data->id == (int) $data->id) {
-            throw new \Exception("ID must be integer.");
+            return throw new \Exception("ID must be integer.");
+        }
+
+        $conditions = null;
+        
+        if (isset($data->email) && !is_null($data->email)) {
+            $data->email = filter_var($data->email, FILTER_SANITIZE_EMAIL);
+
+            if (!filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
+                return throw new \Exception("Invalid email!");
+            }
+
+            $conditions .= ' SET email = "' . $data->email . '"';
+        }
+
+        if (isset($data->password) && !is_null($data->password)) {
+            if (!is_null($conditions)) {
+                $conditions .= ",";
+            } else {
+                $conditions .= ' SET';
+            }
+
+            $conditions .= ' password = "' . md5($data->password) . '"';
+        }
+
+        if (isset($data->name) && !is_null($data->name)) {
+            if (!is_null($conditions)) {
+                $conditions .= ",";
+            } else {
+                $conditions .= ' SET';
+            }
+            
+            $conditions .= ' name = "' . $data->name . '"';
+        }
+
+        if (is_null($conditions)) {
+            return throw new \Exception("Any data to be updated!");
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
-        $sql  = 'UPDATE ' . self::$table . ' SET email = ?, password = ?, name = ? WHERE id = ?';
+        $sql  = 'UPDATE ' . self::$table . $conditions . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
 
-        $stmt->bindValue(1, $data->email);
-        $stmt->bindValue(2, md5($data->password));
-        $stmt->bindValue(3, $data->name);
-        $stmt->bindValue(4, $data->id);
+        $stmt->bindValue(1, $data->id);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             return "User successfully updated.";
         } else {
-            throw new \Exception("Failed to update user!");
+            return throw new \Exception("Failed to update user!");
         }
     }
 
     public static function delete($data) {
         if (is_null($data->id)) {
-            throw new \Exception("ID is required");
+            return throw new \Exception("ID is required");
         } else if (!$data->id == (int) $data->id) {
-            throw new \Exception("ID must be integer.");
+            return throw new \Exception("ID must be integer.");
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
@@ -181,7 +214,7 @@ class User {
         if ($stmt->rowCount() > 0) {
             return "User successfully deleted.";
         } else {
-            throw new \Exception("Failed to delete user!");
+            return throw new \Exception("Failed to delete user!");
         }
     }
 }
