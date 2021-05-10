@@ -38,10 +38,6 @@ if ($_GET['url']) {
             exit;
         }
 
-       
-
-        //$method  = strtolower($_SERVER['REQUEST_METHOD']);
-
         try {
             $response = call_user_func_array(array(new $service, $method), $url);
 
