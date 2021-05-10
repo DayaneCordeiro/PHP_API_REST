@@ -14,9 +14,9 @@ class UserService {
     }
 
     public function create() {
-        $method  = strtolower($_SERVER['REQUEST_METHOD']);
+        $method  = $_SERVER['REQUEST_METHOD'];
 
-        if ($method != "post") {
+        if ($method != "POST") {
             return throw new \Exception("HTTP method must be 'POST'");
         }
 
