@@ -148,6 +148,13 @@ class User {
         }
 
         $conditions = null;
+        $authHeader = explode(":", $_SERVER['HTTP_AUTHORIZATION']);
+        $jwt        = $authHeader[1];
+        $token      = JWT::decode($jwt, self::$secret_key, ['HS256']);
+
+        if ($data->id != $token->data->id) {
+            return throw new \Exception("You can only update your owwn user!");
+        }
         
         if (isset($data->email) && !is_null($data->email)) {
             $data->email = filter_var($data->email, FILTER_SANITIZE_EMAIL);
