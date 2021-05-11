@@ -5,6 +5,7 @@ use Firebase\JWT\JWT;
 
 class User {
     private static $table = 'user';
+    private static $secret_key = "YOUR_SECRET_KEY";
 
     public static function findById($id) {
         if (!$id == (int) $id) {
@@ -105,7 +106,6 @@ class User {
 
             // Validates the password
             if (md5($data->password) == $password) {
-                $secret_key = "YOUR_SECRET_KEY";
                 $issuer_claim = "serie_login"; // this can be the servername
                 $audience_claim = "client";
                 $issuedat_claim = time(); // issued at
@@ -125,7 +125,7 @@ class User {
 
                 http_response_code(200);
 
-                $jwt = JWT::encode($token, $secret_key);
+                $jwt = JWT::encode($token, self::$secret_key);
                 return array(
                         "message" => "Successfully logged in.",
                         "jwt" => $jwt,
