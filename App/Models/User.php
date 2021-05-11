@@ -211,6 +211,14 @@ class User {
             return throw new \Exception("ID must be integer.");
         }
 
+        $authHeader = explode(":", $_SERVER['HTTP_AUTHORIZATION']);
+        $jwt        = $authHeader[1];
+        $token      = JWT::decode($jwt, self::$secret_key, ['HS256']);
+
+        if ($data->id != $token->data->id) {
+            return throw new \Exception("You can only delete your own user!");
+        }
+
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         $sql  = 'DELETE FROM ' . self::$table . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
