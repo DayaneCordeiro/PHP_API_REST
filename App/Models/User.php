@@ -5,6 +5,7 @@ use Firebase\JWT\JWT;
 
 class User {
     private static $table = 'user';
+    private static $log_table = 'log_change_user';
     private static $secret_key = "YOUR_SECRET_KEY";
 
     public static function findById($id) {
@@ -69,6 +70,15 @@ class User {
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
+            $sql  = 'SELECT id FROM ' . self::$table . ' ORDER BY id DESC LIMIT 1';
+            $stmt = $conn->prepare($sql);
+
+            $stmt->execute();
+
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+            $id     = $result['id'];
+
+            self::log($data, 'insert', $id);
             return "User successfully inserted.";
         } else {
             return throw new \Exception("Failed to insert user!");
@@ -233,12 +243,25 @@ class User {
         }
     }
 
-    public static function log($data) {
+    public static function log($data, $method, $id = null) {
+        $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
         // gravar log na hora do update, delete e do create
-        // se não tiver id é um insert na tabela de log sem pesquisa de dados antigos
-        if (!isset($data->id)) {
-            // to do
-        } else {
+        
+        if ($method == 'insert') {
+            $dataArray = (array) $data;
+
+            foreach ($dataArray as $data => $value) {
+                $sql  = 'INSERT INTO ' . self::$log_table . '(id_user, changed_field, new_value) VALUES (?, ?, ?)';
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(1, $id);
+                $stmt->bindValue(2, $data);
+                $stmt->bindValue(3, $value);
+                $stmt->execute();
+            }
+
+            //var_dump($dataArray);die();
+         } else {
             // to do
         }
     }
