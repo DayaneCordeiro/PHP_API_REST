@@ -232,4 +232,14 @@ class User {
             return throw new \Exception("Failed to delete user!");
         }
     }
+
+    public static function log($data) {
+        // gravar log na hora do update, delete e do create
+        // se não tiver id é um insert na tabela de log sem pesquisa de dados antigos
+        if (!isset($data->id)) {
+            // to do
+        } else {
+            // to do
+        }
+    }
 }
