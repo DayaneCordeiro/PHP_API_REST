@@ -206,7 +206,7 @@ class User {
 
         
         self::log($data, 'update');
-        
+
         $stmt->bindValue(1, $data->id);
         $stmt->execute();
 
@@ -248,8 +248,6 @@ class User {
 
     public static function log($data, $method, $id = null) {
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
-        // gravar log na hora do update e do create
-        
         if ($method == 'insert') {
             $dataArray             = (array) $data;
             $dataArray['password'] = md5($dataArray['password']);
