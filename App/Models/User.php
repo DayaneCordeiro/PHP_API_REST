@@ -204,6 +204,9 @@ class User {
         $sql  = 'UPDATE ' . self::$table . $conditions . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
 
+        
+        self::log($data, 'update');
+        
         $stmt->bindValue(1, $data->id);
         $stmt->execute();
 
@@ -245,10 +248,11 @@ class User {
 
     public static function log($data, $method, $id = null) {
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
-        // gravar log na hora do update, delete e do create
+        // gravar log na hora do update e do create
         
         if ($method == 'insert') {
-            $dataArray = (array) $data;
+            $dataArray             = (array) $data;
+            $dataArray['password'] = md5($dataArray['password']);
 
             foreach ($dataArray as $data => $value) {
                 $sql  = 'INSERT INTO ' . self::$log_table . '(id_user, changed_field, new_value) VALUES (?, ?, ?)';
@@ -259,10 +263,31 @@ class User {
                 $stmt->bindValue(3, $value);
                 $stmt->execute();
             }
-
-            //var_dump($dataArray);die();
          } else {
-            // to do
+            // UPDATE
+            $dataArray = (array) $data;
+            $id        = $dataArray['id'];
+            unset($dataArray['id']);
+
+            foreach ($dataArray as $data => $value) {
+                $sql  = 'SELECT ' . $data . ' FROM ' . self::$table . ' WHERE id = ?';
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(1, $id);
+                $stmt->execute();
+
+                $result   = $stmt->fetch(\PDO::FETCH_ASSOC);
+                $old_value = $result[$data];
+
+                $sql  = 'INSERT INTO ' . self::$log_table . '(id_user, changed_field, old_value, new_value) VALUES (?, ?, ?, ?)';
+                $stmt = $conn->prepare($sql);
+
+                $stmt->bindValue(1, $id);
+                $stmt->bindValue(2, $data);
+                $stmt->bindValue(3, $old_value);
+                $stmt->bindValue(4, $value);
+                $stmt->execute();
+            }
         }
     }
 }
