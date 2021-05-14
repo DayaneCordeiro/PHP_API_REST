@@ -27,6 +27,9 @@ if ($_GET['url']) {
         if ($method != "login" && isset($jwt)) {
             try {
                 $decoded = JWT::decode($jwt, $secret_key, array('HS256'));
+
+                // verificar se o servidor é o que eu quero
+                // o campo iss contém o nome do servidor
             } catch (\Exception $e) {
                 http_response_code(401);
                 echo json_encode(array('status' => 'error', 'data' => array('message' => 'Access denied.')));
