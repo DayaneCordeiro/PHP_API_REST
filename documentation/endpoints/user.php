@@ -35,6 +35,9 @@
 
  /**
  * @api {get} api/user/ Get all users
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName GetUser
  * @apiGroup User
  *
@@ -43,6 +46,17 @@
  * @apiSuccess {String} id          ID of the User.
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
+ * 
+ * @apiSuccessExample Retunr Example:
+ *    {
+ *       "status": "success",
+ *       "data": {
+ *          "id": "9",
+ *          "email": "phpapirest@gmail.com",
+ *          "password": "abcde1234",
+ *          "name": "PHP API REST"
+ *       }
+ *    }
  */
 
   /**
