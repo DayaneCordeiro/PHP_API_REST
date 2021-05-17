@@ -76,9 +76,9 @@
  * 
  * @apiSuccessExample Request Example:
  *    {
- *        "name"    :   "PHP API REST",
- *        "email"   :   "phpapirest@gmail.com",
- *        "password :   "abcde1234"
+ *        "name"     :   "PHP API REST",
+ *        "email"    :   "phpapirest@gmail.com",
+ *        "password" :   "abcde1234"
  *    }
  * 
  * @apiSuccessExample Retunr Example:
