@@ -12,3 +12,15 @@
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
  */
+
+ /**
+ * @api {get} api/user/ Get all users
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ *
+ * @apiSuccess {String} status      Request status.
+ * @apiSuccess {String} id          ID of the User.
+ * @apiSuccess {String} email       Email of the User.
+ * @apiSuccess {String} name        Name of the User.
+ */
