@@ -47,7 +47,7 @@
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
  * 
- * @apiSuccessExample Retunr Example:
+ * @apiSuccessExample Return Example:
  *    {
  *       "status": "success",
  *       "data": {
