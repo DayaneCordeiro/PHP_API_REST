@@ -147,6 +147,9 @@
 
   /**
  * @api {delete} api/user/delete Delete user
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName Delete
  * @apiGroup User
  *
@@ -154,4 +157,15 @@
  *
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} data        Request message.
+ * 
+ * @apiSuccessExample Request Example:
+ *    {
+ *        "id"       :   "9",
+ *    }
+ * 
+ * @apiSuccessExample Return Example:
+ *    {
+ *        "status" : "success",
+ *        "data"   : "User successfully deleted."
+ *    }
  */
