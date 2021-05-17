@@ -53,7 +53,7 @@
  */
 
   /**
- * @api {post} api/user/update Update user
+ * @api {put} api/user/update Update user
  * @apiName Update
  * @apiGroup User
  *
