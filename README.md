@@ -3,4 +3,6 @@
 
 ![Badge](https://img.shields.io/badge/Language-PHP-%23777bb4?style=for-the-badge&logo=php)
 ![Badge](https://img.shields.io/badge/Database-PHP-%234479a1?style=plastic&logo=mysql)
-![Badge](https://img.shields.io/badge/Language-PHP-%23777bb4?style=for-the-badge&logo=php)
+![Badge](https://img.shields.io/badge/Language-PHP-%23777bb4?style=flat&logo=php)
+![Badge](https://img.shields.io/badge/Language-PHP-%23777bb4?style=social&logo=php)
+![Badge](https://img.shields.io/badge/Language-PHP-%23777bb4?style=flat-square&logo=php)
