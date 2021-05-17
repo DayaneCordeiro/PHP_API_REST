@@ -14,7 +14,7 @@ class User {
         }
 
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
-        $sql  = 'SELECT * FROM ' . self::$table . ' WHERE id = ?';
+        $sql  = 'SELECT id, email, name FROM ' . self::$table . ' WHERE id = ?';
         $stmt = $conn->prepare($sql);
 
         $stmt->bindValue(1, $id);
