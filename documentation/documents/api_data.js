@@ -85,6 +85,19 @@ define({ "api": [
     "type": "delete",
     "url": "api/user/delete",
     "title": "Delete user",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "Delete",
     "group": "User",
     "parameter": {
@@ -118,7 +131,19 @@ define({ "api": [
             "description": "<p>Request message.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"id\"       :   \"9\",\n}",
+          "type": "json"
+        },
+        {
+          "title": "Return Example:",
+          "content": "{\n    \"status\" : \"success\",\n    \"data\"   : \"User successfully deleted.\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "endpoints/user.php",
@@ -325,7 +350,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "jwt",
+            "field": "token",
             "description": "<p>Bearer token.</p>"
           },
           {
@@ -345,7 +370,7 @@ define({ "api": [
         },
         {
           "title": "Return Example:",
-          "content": "{\n    \"status\": \"success\",\n    \"data\": {\n       \"message\": \"Successfully logged in.\",\n       \"jwt\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.NsaWVudCIsImlJpYSBQZXJlcyJ9fQ.ekeJwAwycGRTaS9DyL10dFy5JhZZwsagx8l-Z_MOpcA\",\n       \"email\": \"phpapirest@gmail.com\"\n    }\n}",
+          "content": "{\n    \"status\": \"success\",\n    \"data\": {\n       \"message\": \"Successfully logged in.\",\n       \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.NsaWVudCIsImlJpYSBQZXJlcyJ9fQ.ekeJwAwycGRTaS9DyL10dFy5JhZZwsagx8l-Z_MOpcA\",\n       \"email\": \"phpapirest@gmail.com\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -358,6 +383,19 @@ define({ "api": [
     "type": "put",
     "url": "api/user/update",
     "title": "Update user",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "Update",
     "group": "User",
     "parameter": {
@@ -412,7 +450,19 @@ define({ "api": [
             "description": "<p>Request message.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"id\"       :   \"9\",\n    \"name\"     :   \"PHP API REST\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Return Example:",
+          "content": "{\n    \"status\" : \"success\",\n    \"data\"   : \"User successfully updated.\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "endpoints/user.php",
