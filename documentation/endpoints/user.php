@@ -65,3 +65,14 @@
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} data        Request message.
  */
+
+  /**
+ * @api {delete} api/user/delete Delete user
+ * @apiName Delete
+ * @apiGroup User
+ *
+ * @apiParam {String} id        ID of the User - REQUIRED.
+ *
+ * @apiSuccess {String} status      Request status.
+ * @apiSuccess {String} data        Request message.
+ */
