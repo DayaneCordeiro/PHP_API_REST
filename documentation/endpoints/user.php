@@ -51,3 +51,17 @@
  * @apiSuccess {String} jwt         Bearer token.
  * @apiSuccess {String} email       Email of user.
  */
+
+  /**
+ * @api {post} api/user/update Update user
+ * @apiName Update
+ * @apiGroup User
+ *
+ * @apiParam {String} id        ID of the User - REQUIRED.
+ * @apiParam {String} name      Name of the User.
+ * @apiParam {String} email     Password of the User. 
+ * @apiParam {String} password  Password of the User. 
+ *
+ * @apiSuccess {String} status      Request status.
+ * @apiSuccess {String} data        Request message.
+ */
