@@ -61,6 +61,9 @@
 
   /**
  * @api {post} api/user/create Creates a new user
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName Create
  * @apiGroup User
  *
@@ -70,6 +73,19 @@
  *
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} data        Request message.
+ * 
+ * @apiSuccessExample Request Example:
+ *    {
+ *        "name"    :   "PHP API REST",
+ *        "email"   :   "phpapirest@gmail.com",
+ *        "password :   "abcde1234"
+ *    }
+ * 
+ * @apiSuccessExample Retunr Example:
+ *    {
+ *       "status" : "success",
+ *       "data"   : "User successfully inserted."
+ *    }
  */
 
   /**

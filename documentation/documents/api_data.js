@@ -3,6 +3,19 @@ define({ "api": [
     "type": "post",
     "url": "api/user/create",
     "title": "Creates a new user",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "Create",
     "group": "User",
     "parameter": {
@@ -50,7 +63,19 @@ define({ "api": [
             "description": "<p>Request message.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"name\"    :   \"PHP API REST\",\n    \"email\"   :   \"phpapirest@gmail.com\",\n    \"password :   \"abcde1234\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Retunr Example:",
+          "content": "{\n   \"status\" : \"success\",\n   \"data\"   : \"User successfully inserted.\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "endpoints/user.php",
@@ -185,6 +210,19 @@ define({ "api": [
     "type": "get",
     "url": "api/user/",
     "title": "Get all users",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "GetUser",
     "group": "User",
     "success": {
@@ -219,7 +257,14 @@ define({ "api": [
             "description": "<p>Name of the User.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Retunr Example:",
+          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"9\",\n      \"email\": \"phpapirest@gmail.com\",\n      \"password\": \"abcde1234\",\n      \"name\": \"PHP API REST\"\n   }\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "endpoints/user.php",
