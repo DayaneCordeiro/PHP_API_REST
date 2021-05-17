@@ -32,20 +32,20 @@
 
 <div id="pre-requirements">
     <h1>Pre requirements</h1>
-* To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html
-* It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download
+🔹 To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html
+🔹 It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download
 </div>
 
 <div id="how-to-use">
     <h1>How to use</h1>
-* The first step is to clone the project into the XAMPP htdocs folder, this is an example: **xampp/htdocs/PHP_API_REST/clone here**.
-* To run the API it is necessary to have the Apache server and PHP connected.
-* Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:
+🔹 The first step is to clone the project into the XAMPP htdocs folder, this is an example: <b>xampp/htdocs/PHP_API_REST/clone here</b>.<br>
+🔹 To run the API it is necessary to have the Apache server and PHP connected.<br>
+🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:
 
-![request_example]()
+![request_example](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/request_example.png)
 
 
-* With the server and PHP working, you can use Insomnia to access the API functions, all the details are in the documentation mentioned in the previous topic.
+🔹 With the server and PHP working, you can use Insomnia to access the API functions, all the details are in the documentation mentioned in the previous topic.
 </div>
 
 <div id="technologies">
@@ -63,13 +63,17 @@
 <div id="autho">
     <h1>Author</h1>
     <a href="https://github.com/DayaneCordeiro">
-        <img style="border-radius: 50%;" src="to_put" width="100px;" alt=""/>
+        <img style="border-radius: 50%;" src="https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/foto.png" width="100px;" alt=""/>
         <br />
         <sub><b>Dayane Cordeiro</b></sub>
     </a>
 
 
 Made with ❤️ by Dayane Cordeiro!
+
+Computer Engineering student at PUC Minas
+PHP Developer
+Passionate about computer architecture and learning.
 
 [![Linkedin Badge](https://img.shields.io/badge/-Dayane-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/dayane-cordeiro-1b761318b/)](https://www.linkedin.com/in/dayane-cordeiro-1b761318b/) 
 [![Gmail Badge](https://img.shields.io/badge/-dayane.cordeirogs@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:dayane.cordeirogs@gmail.com)](mailto:dayane.cordeirogs@gmail.com)
