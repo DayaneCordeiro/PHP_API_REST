@@ -20,9 +20,9 @@
  *    {
  *       "status": "success",
  *       "data": {
- *          "id": "5",
- *          "email": "dayane@gmail.com",
- *          "name": "Glória Peres"
+ *          "id": "9",
+ *          "email": "phpapirest@gmail.com",
+ *          "name": "PHP API REST"
  *       }
  *    }
  */
