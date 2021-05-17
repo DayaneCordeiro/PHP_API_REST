@@ -2,7 +2,11 @@
 
 /**
  * @api {get} api/user/:id Get user by id
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName GetUser
+ * @apiVersion 2.0.0
  * @apiGroup User
  *
  * @apiParam {Number} id    Users unique ID.
@@ -11,6 +15,22 @@
  * @apiSuccess {String} id          ID of the User.
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
+ * 
+ * @apiSuccessExample Request Example:
+ *    {
+ *        "id"  :   "9"
+ *    }
+ * 
+ * @apiSuccessExample Retunr Example:
+ *    {
+ *       "status": "success",
+ *       "data": {
+ *          "id": "5",
+ *          "email": "dayane@gmail.com",
+ *          "password": "81dc9bdb52d04dc20036dbd8313ed055",
+ *          "name": "Glória Peres"
+ *       }
+ *    }
  */
 
  /**

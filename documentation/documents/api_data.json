@@ -1,9 +1,123 @@
 [
   {
+    "type": "post",
+    "url": "api/user/create",
+    "title": "Creates a new user",
+    "name": "Create",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the User.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the User.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Request status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Request message.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "endpoints/user.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "delete",
+    "url": "api/user/delete",
+    "title": "Delete user",
+    "name": "Delete",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID of the User - REQUIRED.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Request status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Request message.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "endpoints/user.php",
+    "groupTitle": "User"
+  },
+  {
     "type": "get",
     "url": "api/user/:id",
     "title": "Get user by id",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "GetUser",
+    "version": "2.0.0",
     "group": "User",
     "parameter": {
       "fields": {
@@ -48,6 +162,189 @@
             "optional": false,
             "field": "name",
             "description": "<p>Name of the User.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"id\"  :   \"9\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Retunr Example:",
+          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"5\",\n      \"email\": \"dayane@gmail.com\",\n      \"password\": \"81dc9bdb52d04dc20036dbd8313ed055\",\n      \"name\": \"Glória Peres\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "endpoints/user.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "api/user/",
+    "title": "Get all users",
+    "name": "GetUser",
+    "group": "User",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Request status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the User.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "endpoints/user.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "api/user/login",
+    "title": "Log into the system",
+    "name": "Login",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the User.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Request status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Request message.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "jwt",
+            "description": "<p>Bearer token.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of user.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "endpoints/user.php",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "api/user/update",
+    "title": "Update user",
+    "name": "Update",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID of the User - REQUIRED.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the User.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Password of the User.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the User.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Request status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Request message.</p>"
           }
         ]
       }
