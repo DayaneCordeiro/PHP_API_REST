@@ -48,7 +48,6 @@
  *       "data": {
  *          "id": "9",
  *          "email": "phpapirest@gmail.com",
- *          "password": "abcde1234",
  *          "name": "PHP API REST"
  *       }
  *    }
