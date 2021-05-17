@@ -22,7 +22,6 @@
  *       "data": {
  *          "id": "5",
  *          "email": "dayane@gmail.com",
- *          "password": "81dc9bdb52d04dc20036dbd8313ed055",
  *          "name": "Glória Peres"
  *       }
  *    }
