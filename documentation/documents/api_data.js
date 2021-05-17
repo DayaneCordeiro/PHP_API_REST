@@ -67,7 +67,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n    \"name\"    :   \"PHP API REST\",\n    \"email\"   :   \"phpapirest@gmail.com\",\n    \"password :   \"abcde1234\"\n}",
+          "content": "{\n    \"name\"     :   \"PHP API REST\",\n    \"email\"    :   \"phpapirest@gmail.com\",\n    \"password\" :   \"abcde1234\"\n}",
           "type": "json"
         },
         {

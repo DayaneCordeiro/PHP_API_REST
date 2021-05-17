@@ -81,7 +81,7 @@
  *        "password" :   "abcde1234"
  *    }
  * 
- * @apiSuccessExample Retunr Example:
+ * @apiSuccessExample Return Example:
  *    {
  *       "status" : "success",
  *       "data"   : "User successfully inserted."
