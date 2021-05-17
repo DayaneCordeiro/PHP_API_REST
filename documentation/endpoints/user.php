@@ -16,12 +16,7 @@
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
  * 
- * @apiSuccessExample Request Example:
- *    {
- *        "id"  :   "9"
- *    }
- * 
- * @apiSuccessExample Retunr Example:
+ * @apiSuccessExample Return Example:
  *    {
  *       "status": "success",
  *       "data": {
