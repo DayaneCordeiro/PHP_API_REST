@@ -138,7 +138,7 @@ class User {
                 $jwt = JWT::encode($token, self::$secret_key);
                 return array(
                         "message" => "Successfully logged in.",
-                        "jwt" => $jwt,
+                        "token" => $jwt,
                         "email" => $email,
                         //"expireAt" => $expire_claim
                 );
