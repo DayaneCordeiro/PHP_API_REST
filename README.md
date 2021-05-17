@@ -8,7 +8,7 @@
 ![Badge](https://img.shields.io/badge/Authorization-JWT-%23000000?style=flat&logo=jsonwebtokens)
 ![Badge](https://img.shields.io/badge/composer-2.0.13-%23885630?style=flat&logo=composer)
 ![Badge](https://img.shields.io/badge/npm-7.6.3-%23cb3837?style=flat&logo=npm)
-![Badge](https://img.shields.io/badge/API-Designer-Insomnia-%235849be?style=flat&logo=insomnia)
+![Badge](https://img.shields.io/badge/API_Designer-Insomnia-%235849be?style=flat&logo=insomnia)
 <a href="https://github.com/DayaneCordeiro/PHP_API_REST/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/DayaneCordeiro/PHP_API_REST"></a>
 <a href="https://github.com/DayaneCordeiro/PHP_API_REST/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/DayaneCordeiro/PHP_API_REST"></a>
 <a href="https://github.com/DayaneCordeiro/PHP_API_REST/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/DayaneCordeiro/PHP_API_REST"></a>
@@ -32,7 +32,7 @@
 
 <div id="pre-requirements">
     <h1>Pre requirements</h1>
-🔹 To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html
+🔹 To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html<br>
 🔹 It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download
 </div>
 
@@ -63,17 +63,16 @@
 <div id="autho">
     <h1>Author</h1>
     <a href="https://github.com/DayaneCordeiro">
-        <img style="border-radius: 50%;" src="https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/foto.png" width="100px;" alt=""/>
+        <img style="border-radius: 100%;" src="https://avatars.githubusercontent.com/u/50596100?v=4" width="150px;" alt=""/>
         <br />
         <sub><b>Dayane Cordeiro</b></sub>
     </a>
 
-
 Made with ❤️ by Dayane Cordeiro!
 
-Computer Engineering student at PUC Minas
-PHP Developer
-Passionate about computer architecture and learning.
+✔ Computer Engineering student at PUC Minas<br>
+✔ PHP Developer<br>
+✔ Passionate about computer architecture and learning.<br>
 
 [![Linkedin Badge](https://img.shields.io/badge/-Dayane-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/dayane-cordeiro-1b761318b/)](https://www.linkedin.com/in/dayane-cordeiro-1b761318b/) 
 [![Gmail Badge](https://img.shields.io/badge/-dayane.cordeirogs@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:dayane.cordeirogs@gmail.com)](mailto:dayane.cordeirogs@gmail.com)
