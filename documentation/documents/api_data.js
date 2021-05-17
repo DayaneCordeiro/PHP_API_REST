@@ -218,7 +218,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Return Example:",
-          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"5\",\n      \"email\": \"dayane@gmail.com\",\n      \"password\": \"81dc9bdb52d04dc20036dbd8313ed055\",\n      \"name\": \"Glória Peres\"\n   }\n}",
+          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"5\",\n      \"email\": \"dayane@gmail.com\",\n      \"name\": \"Glória Peres\"\n   }\n}",
           "type": "json"
         }
       ]
@@ -281,7 +281,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Return Example:",
-          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"9\",\n      \"email\": \"phpapirest@gmail.com\",\n      \"password\": \"abcde1234\",\n      \"name\": \"PHP API REST\"\n   }\n}",
+          "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"9\",\n      \"email\": \"phpapirest@gmail.com\",\n      \"name\": \"PHP API REST\"\n   }\n}",
           "type": "json"
         }
       ]
