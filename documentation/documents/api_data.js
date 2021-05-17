@@ -152,7 +152,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "api/user/get/:id",
-    "title": "Get user by id",
+    "title": "Get user",
     "header": {
       "fields": {
         "Header": [
