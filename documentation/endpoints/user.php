@@ -118,6 +118,9 @@
 
   /**
  * @api {put} api/user/update Update user
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName Update
  * @apiGroup User
  *
@@ -128,6 +131,18 @@
  *
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} data        Request message.
+ * 
+ * @apiSuccessExample Request Example:
+ *    {
+ *        "id"       :   "9",
+ *        "name"     :   "PHP API REST"
+ *    }
+ * 
+ * @apiSuccessExample Return Example:
+ *    {
+ *        "status" : "success",
+ *        "data"   : "User successfully updated."
+ *    }
  */
 
   /**
