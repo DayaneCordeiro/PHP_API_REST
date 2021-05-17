@@ -71,7 +71,7 @@
           "type": "json"
         },
         {
-          "title": "Retunr Example:",
+          "title": "Return Example:",
           "content": "{\n   \"status\" : \"success\",\n   \"data\"   : \"User successfully inserted.\"\n}",
           "type": "json"
         }
@@ -192,12 +192,7 @@
       },
       "examples": [
         {
-          "title": "Request Example:",
-          "content": "{\n    \"id\"  :   \"9\"\n}",
-          "type": "json"
-        },
-        {
-          "title": "Retunr Example:",
+          "title": "Return Example:",
           "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"5\",\n      \"email\": \"dayane@gmail.com\",\n      \"password\": \"81dc9bdb52d04dc20036dbd8313ed055\",\n      \"name\": \"Glória Peres\"\n   }\n}",
           "type": "json"
         }
@@ -260,7 +255,7 @@
       },
       "examples": [
         {
-          "title": "Retunr Example:",
+          "title": "Return Example:",
           "content": "{\n   \"status\": \"success\",\n   \"data\": {\n      \"id\": \"9\",\n      \"email\": \"phpapirest@gmail.com\",\n      \"password\": \"abcde1234\",\n      \"name\": \"PHP API REST\"\n   }\n}",
           "type": "json"
         }
@@ -274,6 +269,19 @@
     "type": "post",
     "url": "api/user/login",
     "title": "Log into the system",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "json",
+            "optional": false,
+            "field": "Header",
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+          }
+        ]
+      }
+    },
     "name": "Login",
     "group": "User",
     "parameter": {
@@ -328,7 +336,19 @@
             "description": "<p>Email of user.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n    \"email\"    :   \"phpapirest@gmail.com\",\n    \"password\" :   \"abcde1234\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Return Example:",
+          "content": "{\n    \"status\": \"success\",\n    \"data\": {\n       \"message\": \"Successfully logged in.\",\n       \"jwt\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.NsaWVudCIsImlJpYSBQZXJlcyJ9fQ.ekeJwAwycGRTaS9DyL10dFy5JhZZwsagx8l-Z_MOpcA\",\n       \"email\": \"phpapirest@gmail.com\"\n    }\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "endpoints/user.php",

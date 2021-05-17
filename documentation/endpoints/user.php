@@ -85,6 +85,9 @@
 
   /**
  * @api {post} api/user/login Log into the system
+ * 
+ * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * 
  * @apiName Login
  * @apiGroup User
  *
@@ -93,8 +96,24 @@
  *
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} message     Request message.
- * @apiSuccess {String} jwt         Bearer token.
+ * @apiSuccess {String} token       Bearer token.
  * @apiSuccess {String} email       Email of user.
+ * 
+ * @apiSuccessExample Request Example:
+ *    {
+ *        "email"    :   "phpapirest@gmail.com",
+ *        "password" :   "abcde1234"
+ *    }
+ * 
+ * @apiSuccessExample Return Example:
+ *    {
+ *        "status": "success",
+ *        "data": {
+ *           "message": "Successfully logged in.",
+ *           "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.NsaWVudCIsImlJpYSBQZXJlcyJ9fQ.ekeJwAwycGRTaS9DyL10dFy5JhZZwsagx8l-Z_MOpcA",
+ *           "email": "phpapirest@gmail.com"
+ *        }
+ *    }
  */
 
   /**
