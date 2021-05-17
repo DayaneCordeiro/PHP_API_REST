@@ -2,5 +2,6 @@
     "name": "Serie Login",
     "version": "2.0.0",
     "description": "API that gives access to a user CRUD.",
-    "title": "PHP API REST"
+    "title": "PHP API REST",
+    "url": "http://localhost/projects/PHP_API_REST/public_html/"
   }
