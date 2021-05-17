@@ -29,7 +29,7 @@ class User {
 
     public static function findAll() {
         $conn = new \PDO(DBDRIVE .': host=' . DBHOST . '; dbname=' . DBNAME, DBUSER, DBPASS);
-        $sql  = 'SELECT * FROM ' . self::$table;
+        $sql  = 'SELECT id, email, name FROM ' . self::$table;
         $stmt = $conn->prepare($sql);
 
         $stmt->execute();
