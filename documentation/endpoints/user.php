@@ -37,3 +37,17 @@
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} data        Request message.
  */
+
+  /**
+ * @api {post} api/user/login Log into the system
+ * @apiName Login
+ * @apiGroup User
+ *
+ * @apiParam {String} email     Email of the User.
+ * @apiParam {String} password  Password of the User. 
+ *
+ * @apiSuccess {String} status      Request status.
+ * @apiSuccess {String} message     Request message.
+ * @apiSuccess {String} jwt         Bearer token.
+ * @apiSuccess {String} email       Email of user.
+ */
