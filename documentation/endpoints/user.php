@@ -28,13 +28,12 @@
  */
 
  /**
- * @api {get} api/user/ Get all users
+ * @api {get} api/user/get/ Get all users
  * 
  * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
  * 
  * @apiName GetUser
  * @apiGroup User
- *
  *
  * @apiSuccess {String} status      Request status.
  * @apiSuccess {String} id          ID of the User.
