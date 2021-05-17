@@ -1,7 +1,9 @@
 {
-    "name": "Serie Login",
+    "name": "PHP API REST",
     "version": "2.0.0",
-    "description": "API that gives access to a user CRUD.",
+    "description": "API that gives access to a user CRUD.<br> Endpoint: http://localhost/projects/PHP_API_REST/public_html/",
     "title": "PHP API REST",
-    "url": "http://localhost/projects/PHP_API_REST/public_html/"
+    "apidoc": {
+      "url": "http://localhost/projects/PHP_API_REST/public_html/"
+    }
   }
