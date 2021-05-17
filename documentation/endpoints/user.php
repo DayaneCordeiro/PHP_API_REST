@@ -24,3 +24,16 @@
  * @apiSuccess {String} email       Email of the User.
  * @apiSuccess {String} name        Name of the User.
  */
+
+  /**
+ * @api {post} api/user/create Creates a new user
+ * @apiName Create
+ * @apiGroup User
+ *
+ * @apiParam {String} name      Name of the User.
+ * @apiParam {String} email     Email of the User.
+ * @apiParam {String} password  Password of the User. 
+ *
+ * @apiSuccess {String} status      Request status.
+ * @apiSuccess {String} data        Request message.
+ */
