@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @api {get} api/user/get/:id Get user by id
+ * @api {get} api/user/get/:id Get user
  * 
  * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
  * 

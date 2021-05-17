@@ -151,7 +151,7 @@
   },
   {
     "type": "get",
-    "url": "api/user/:id",
+    "url": "api/user/get/:id",
     "title": "Get user by id",
     "header": {
       "fields": {
@@ -228,7 +228,7 @@
   },
   {
     "type": "get",
-    "url": "api/user/",
+    "url": "api/user/get/",
     "title": "Get all users",
     "header": {
       "fields": {
