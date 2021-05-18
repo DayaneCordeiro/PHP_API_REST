@@ -54,7 +54,7 @@
   /**
  * @api {post} api/user/create Creates a new user
  * 
- * @apiHeader{json} Header {"Content-Type": "application/json", "Authorization": Bearer {token}}
+ * @apiHeader{json} Header {"Content-Type": "application/json"}
  * 
  * @apiName Create
  * @apiGroup User
