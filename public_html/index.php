@@ -24,7 +24,7 @@ if ($_GET['url']) {
             $jwt        = $info[1];
         }
 
-        if ($method != "login" && isset($jwt)) {
+        if ($method != "login" && $method != "create" && isset($jwt)) {
             try {
                 $decoded = JWT::decode($jwt, $secret_key, array('HS256'));
                 
@@ -38,7 +38,7 @@ if ($_GET['url']) {
                 exit;
             }
         }
-        if ($method != "login" && !isset($jwt)) {
+        else if ($method != "login" && $method != "create" && !isset($jwt)) {
             echo json_encode(array('status' => 'error', 'data' => array('message' => 'Authorization token not found.')));
             exit;
         }
