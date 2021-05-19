@@ -23,7 +23,7 @@
 </p>
 
 <h4 align="center"> 
-	🏁 PHP API REST ✔ version 2.0.2 is ready 🏁
+	🏁 PHP API REST ✔ version 2.0.3 is ready 🏁
 </h4>
 
 <div id="about">
@@ -50,7 +50,7 @@
 🔹 To run the API it is necessary to have the Apache server and PHP connected.<br>
 🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. You can see a endpoint documentation example in the following image:<br><br>
 
-![documentation_example]()
+![documentation_example](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/api_create_user.png)
 
 🔹 Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:<br><br>
 
