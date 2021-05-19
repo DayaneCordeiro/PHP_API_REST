@@ -11,7 +11,7 @@
             "type": "json",
             "optional": false,
             "field": "Header",
-            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: Bearer {token}}</p>"
+            "description": "<p>{&quot;Content-Type&quot;: &quot;application/json&quot;}</p>"
           }
         ]
       }
