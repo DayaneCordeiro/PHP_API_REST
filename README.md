@@ -48,7 +48,11 @@
     <h1>How to use</h1>
 🔹 The first step is to clone the project into the XAMPP htdocs folder, this is an example: <b>xampp/htdocs/PHP_API_REST/clone here</b>.<br>
 🔹 To run the API it is necessary to have the Apache server and PHP connected.<br>
-🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:<br><br>
+🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. You can see a endpoint documentation example in the following image:<br><br>
+
+![documentation_example]()
+
+🔹 Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:<br><br>
 
 ![request_example](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/request_example.png)
 
