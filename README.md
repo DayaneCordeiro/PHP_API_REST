@@ -1,6 +1,19 @@
 # PHP API REST 🐘
 ## This API is intended to allow to access a users CRUD.
 
+![Badge](https://img.shields.io/badge/PHP-8.0.1-%23777bb4?style=flat)
+![Badge](https://img.shields.io/badge/Database-MySQL-%234479a1?style=flat)
+![Badge](https://img.shields.io/badge/IDE-VSCODE-%23007acc?style=flat)
+![Badge](https://img.shields.io/badge/XAMPP-3.2.4-%23fb7a24?style=flat)
+![Badge](https://img.shields.io/badge/Authorization-JWT-%23000000?style=flat)
+![Badge](https://img.shields.io/badge/composer-2.0.13-%23885630?style=flat)
+![Badge](https://img.shields.io/badge/npm-7.6.3-%23cb3837?style=flat)
+![Badge](https://img.shields.io/badge/API_Designer-Insomnia-%235849be?style=flat)
+![Badge](https://img.shields.io/badge/SQLyog_Communit-13.1.7-%23007acc?style=flat)
+<a href="https://github.com/DayaneCordeiro/PHP_API_REST/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/DayaneCordeiro/PHP_API_REST"></a>
+<a href="https://github.com/DayaneCordeiro/PHP_API_REST/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/DayaneCordeiro/PHP_API_REST"></a>
+<a href="https://github.com/DayaneCordeiro/PHP_API_REST/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/DayaneCordeiro/PHP_API_REST"></a>
+
 <p align="center">
     <a href="#about">About</a> •
     <a href="#pre-requirements">Pre requirements</a> • 
