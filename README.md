@@ -23,7 +23,7 @@
 </p>
 
 <h4 align="center"> 
-	🏁 PHP API REST ✔ version 2.0.1 is ready 🏁
+	🏁 PHP API REST ✔ version 2.0.2 is ready 🏁
 </h4>
 
 <div id="about">
@@ -35,22 +35,20 @@
     <h1>Pre requirements</h1>
 🔹 To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html<br>
 🔹 It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download
+🔹 You have to create the project database. You have to go to database folder, copy the sql code and paste in into the database manager of your choice (In this project SQLyog Communit software was used, you can find it in https://code.google.com/archive/p/sqlyog/wikis/Downloads.wiki). Press <b>CTRL + A</b> to select all SQL code and press to run. You will have two tables: user and log_change_user as the following images. <br><br>
+
+
+![user_table](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/user_table.png)
+
+
+![log_change_user_table](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/log_user_table.png)
 </div>
 
 <div id="how-to-use">
     <h1>How to use</h1>
 🔹 The first step is to clone the project into the XAMPP htdocs folder, this is an example: <b>xampp/htdocs/PHP_API_REST/clone here</b>.<br>
 🔹 To run the API it is necessary to have the Apache server and PHP connected.<br>
-🔹 You have to create the project database. You have to go to database folder, copy the sql code and paste in into the database manager of your choice (In this project SQLyog Communit software was used, you can find it in https://code.google.com/archive/p/sqlyog/wikis/Downloads.wiki). Press <b style="color: blue">CTRL + A<b> to select all SQL code and press to run. You will have two tables: user and log_change_user as the following images. 
-
-
-![user_table]()
-
-
-![log_change_user_table]()
-
-
-🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:
+🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:<br><br>
 
 ![request_example](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/request_example.png)
 
