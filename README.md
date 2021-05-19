@@ -1,15 +1,3 @@
-![Badge](https://img.shields.io/badge/PHP-8.0.1-%23777bb4?style=flat)
-![Badge](https://img.shields.io/badge/Database-MySQL-%234479a1?style=flat)
-![Badge](https://img.shields.io/badge/IDE-VSCODE-%23007acc?style=flat)
-![Badge](https://img.shields.io/badge/XAMPP-3.2.4-%23fb7a24?style=flat)
-![Badge](https://img.shields.io/badge/Authorization-JWT-%23000000?style=flat)
-![Badge](https://img.shields.io/badge/composer-2.0.13-%23885630?style=flat)
-![Badge](https://img.shields.io/badge/npm-7.6.3-%23cb3837?style=flat)
-![Badge](https://img.shields.io/badge/API_Designer-Insomnia-%235849be?style=flat)
-<a href="https://github.com/DayaneCordeiro/PHP_API_REST/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/DayaneCordeiro/PHP_API_REST"></a>
-<a href="https://github.com/DayaneCordeiro/PHP_API_REST/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/DayaneCordeiro/PHP_API_REST"></a>
-<a href="https://github.com/DayaneCordeiro/PHP_API_REST/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/DayaneCordeiro/PHP_API_REST"></a>
-
 # PHP API REST 🐘
 ## This API is intended to allow to access a users CRUD.
 
@@ -40,6 +28,15 @@
     <h1>How to use</h1>
 🔹 The first step is to clone the project into the XAMPP htdocs folder, this is an example: <b>xampp/htdocs/PHP_API_REST/clone here</b>.<br>
 🔹 To run the API it is necessary to have the Apache server and PHP connected.<br>
+🔹 You have to create the project database. You have to go to database folder, copy the sql code and paste in into the database manager of your choice (In this project SQLyog Communit software was used, you can find it in https://code.google.com/archive/p/sqlyog/wikis/Downloads.wiki). Press <b style="color: blue">CTRL + A<b> to select all SQL code and press to run. You will have two tables: user and log_change_user as the following images. 
+
+
+![user_table]()
+
+
+![log_change_user_table]()
+
+
 🔹 Go to the documentation/documents folder and open the index.html file in the browser of your choice. This file shows how to use each of the API endpoints. Note that it is necessary to put the project path before the endpoint in the URL inside Insomnia. See the example:
 
 ![request_example](https://github.com/DayaneCordeiro/PHP_API_REST/blob/main/images/request_example.png)
