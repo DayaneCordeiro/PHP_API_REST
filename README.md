@@ -34,7 +34,7 @@
 <div id="pre-requirements">
     <h1>Pre requirements</h1>
 🔹 To use the project it is necessary to have PHP and Apache installed on the computer considering that the system will run the system at localhost. For the development of this project, the XAMPP tool was used, which can be accessed at the following address: https://www.apachefriends.org/download.html<br>
-🔹 It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download
+🔹 It is also necessary to have an API Client Platform. In this project Insomnia was used. This software can be found at the follow address: https://insomnia.rest/download<br>
 🔹 You have to create the project database. You have to go to database folder, copy the sql code and paste in into the database manager of your choice (In this project SQLyog Communit software was used, you can find it in https://code.google.com/archive/p/sqlyog/wikis/Downloads.wiki). Press <b>CTRL + A</b> to select all SQL code and press to run. You will have two tables: user and log_change_user as the following images. <br><br>
 
 
